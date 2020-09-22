@@ -1,84 +1,84 @@
 {
-    "chapters": [
+    "books": [
         {
             "title": "The Humble Life of a Skill Trainer",
-            "link": "/fiction/30737/the-humble-life-of-a-skill-trainer"
+            "homepage": "/fiction/30737/the-humble-life-of-a-skill-trainer"
         },
         {
             "title": "I Became a [Biologist] in a Fantasy World!",
-            "link": "/fiction/33378/i-became-a-biologist-in-a-fantasy-world"
+            "homepage": "/fiction/33378/i-became-a-biologist-in-a-fantasy-world"
         },
         {
             "title": "Stray Cat Strut ⁠— A Young Lady's Journey to Becoming a Pop-Up Samurai",
-            "link": "/fiction/33600/stray-cat-strut-a-young-ladys-journey-to-becoming"
+            "homepage": "/fiction/33600/stray-cat-strut-a-young-ladys-journey-to-becoming"
         },
         {
             "title": "Vaudevillain",
-            "link": "/fiction/32983/vaudevillain"
+            "homepage": "/fiction/32983/vaudevillain"
         },
         {
             "title": "Forge of Destiny",
-            "link": "/fiction/21188/forge-of-destiny"
+            "homepage": "/fiction/21188/forge-of-destiny"
         },
         {
             "title": "Doom Guy Isekai",
-            "link": "/fiction/34854/doom-guy-isekai"
+            "homepage": "/fiction/34854/doom-guy-isekai"
         },
         {
             "title": "Villager Three",
-            "link": "/fiction/32576/villager-three"
+            "homepage": "/fiction/32576/villager-three"
         },
         {
             "title": "Post Human",
-            "link": "/fiction/22848/post-human"
+            "homepage": "/fiction/22848/post-human"
         },
         {
             "title": "Ave Xia Rem Y",
-            "link": "/fiction/15193/ave-xia-rem-y"
+            "homepage": "/fiction/15193/ave-xia-rem-y"
         },
         {
             "title": "Threadbare",
-            "link": "/fiction/15130/threadbare"
+            "homepage": "/fiction/15130/threadbare"
         },
         {
             "title": "The Wandering Inn",
-            "link": "/fiction/10073/the-wandering-inn"
+            "homepage": "/fiction/10073/the-wandering-inn"
         },
         {
             "title": "Blue Core",
-            "link": "/fiction/25082/blue-core"
+            "homepage": "/fiction/25082/blue-core"
         },
         {
             "title": "This Quest is Bullshit",
-            "link": "/fiction/33801/this-quest-is-bullshit"
+            "homepage": "/fiction/33801/this-quest-is-bullshit"
         },
         {
             "title": "The Ogre's Pendant & The Rat in the Pit",
-            "link": "/fiction/31194/the-ogres-pendant-the-rat-in-the-pit"
+            "homepage": "/fiction/31194/the-ogres-pendant-the-rat-in-the-pit"
         },
         {
             "title": "Arrogant Young Master Template A Variation 4",
-            "link": "/fiction/28601/arrogant-young-master-template-a-variation-4"
+            "homepage": "/fiction/28601/arrogant-young-master-template-a-variation-4"
         },
         {
             "title": "A Beginner's Guide to Napping, Sunbathing, and Slaughtering Your Prey",
-            "link": "/fiction/26127/a-beginners-guide-to-napping-sunbathing-and-slaughtering"
+            "homepage": "/fiction/26127/a-beginners-guide-to-napping-sunbathing-and-slaughtering"
         },
         {
             "title": "The Simulacrum",
-            "link": "/fiction/23173/the-simulacrum"
+            "homepage": "/fiction/23173/the-simulacrum"
         },
         {
             "title": "Lament of the Fallen",
-            "link": "/fiction/6752/lament-of-the-fallen"
+            "homepage": "/fiction/6752/lament-of-the-fallen"
         },
         {
             "title": "Everybody Loves Large Chests",
-            "link": "/fiction/8894/everybody-loves-large-chests"
+            "homepage": "/fiction/8894/everybody-loves-large-chests"
         },
         {
             "title": "Undead",
-            "link": "/fiction/30673/undead"
+            "homepage": "/fiction/30673/undead"
         }
     ]
 }
