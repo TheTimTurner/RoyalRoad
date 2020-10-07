@@ -1,4 +1,4 @@
-1: {
+{"1": {
     "title": "dìle",
     "homepage": "/fiction/13243/dile",
     "chapData": [
@@ -64,7 +64,7 @@
         1,
         1
     ]
-},"1" : {
+},"2" : {
     "title": "dìle",
     "homepage": "/fiction/13243/dile",
     "chapData": [
@@ -130,4 +130,4 @@
         1,
         1
     ]
-},
+}}
