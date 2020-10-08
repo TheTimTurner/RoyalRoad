@@ -106,9 +106,9 @@ async function scrapeFiction(fiction, index, comma) {//tagData 63 means complete
     fiction.errors = parsed.errors;
     const data = parsed.tagData;
     if (data[63]) {
-        destination.dead = false;
+        fiction.dead = false;
     } else if(data[64]) {
-        destination.dead = true;
+        fiction.dead = true;
     }
     const stringified = JSON.stringify(fiction, null, 4);
     fs.appendFileSync('dataOutput.json', `"${index}" : ${stringified}${comma}`, (err) => err ? console.log(`Could not write ${index} output to file`) : console.log(`Output ${index} written to file.`));

@@ -1,6 +1,11 @@
 const fs = require('fs');
 scrapeFunctions = require('./scrape-fiction');
 async function run() {
+    try {
+        fs.unlinkSync('dataOutput.json');
+    } catch(err) {
+        console.log(err);
+    }
     console.log("Boutta read file!");
     const rawJSON = fs.readFileSync('table-of-contents.json');
 
