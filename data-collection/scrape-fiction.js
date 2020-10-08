@@ -95,7 +95,7 @@ function readHTML(html) {
     return {tagData, errors};
 }
 let lastFetchTime;
-async function scrapeFiction(fiction, index) {//tagData 63 means completed, 64 means dead
+async function scrapeFiction(fiction, index, comma) {//tagData 63 means completed, 64 means dead
     const path = fiction.homepage;
     const url = `https://www.royalroad.com${path}`;
     while (lastFetchTime && Date.now() - lastFetchTime < 1000) {}
