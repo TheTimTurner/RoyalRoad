@@ -11,11 +11,9 @@ async function run() {
     console.log("About to loop");
     for (let index = 0; index < books.length; index++) {
         const fiction = books[index];
-        await scrapeFunctions.scrapeFiction(fiction.homepage, fiction);
-        console.log(`Parsing index ${index}`);
         const comma = index == last ? '}' : ',';
-        const stringified = JSON.stringify(fiction, null, 4);
-        fs.appendFile('dataOutput.json', `"${index}" : ${stringified}${comma}`, (err) => err ? console.log(`Could not write ${index} output to file`) : console.log(`Output ${index} written to file.`));
+        await scrapeFunctions.scrapeFiction(fiction, index, comma);
+        console.log(`Parsed index ${index}`);
     }
     // data.books.forEach(async (fiction, index) => {
         //slow it down

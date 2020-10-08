@@ -95,21 +95,24 @@ function readHTML(html) {
     return {tagData, errors};
 }
 let lastFetchTime;
-async function scrapeFiction(path, destination) {//tagData 63 means completed, 64 means dead
+async function scrapeFiction(fiction, index) {//tagData 63 means completed, 64 means dead
+    const path = fiction.homepage;
     const url = `https://www.royalroad.com${path}`;
     while (lastFetchTime && Date.now() - lastFetchTime < 1000) {}
     lastFetchTime = Date.now();
     const html = await axios.get(url);
     const parsed = readHTML(html);
-    destination.chapData = parsed.tagData;
-    destination.errors = parsed.errors;
+    fiction.chapData = parsed.tagData;
+    fiction.errors = parsed.errors;
     const data = parsed.tagData;
     if (data[63]) {
         destination.dead = false;
     } else if(data[64]) {
         destination.dead = true;
     }
-    // console.log("Loop finished for ", path);
+    const stringified = JSON.stringify(fiction, null, 4);
+    fs.appendFileSync('dataOutput.json', `"${index}" : ${stringified}${comma}`, (err) => err ? console.log(`Could not write ${index} output to file`) : console.log(`Output ${index} written to file.`));
+    console.log("Data written for ", index);
 }
 module.exports = {
     scrapeFiction
