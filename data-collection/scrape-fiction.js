@@ -97,9 +97,8 @@ function readHTML(html) {
 let lastFetchTime;
 async function scrapeFiction(path, destination) {//tagData 63 means completed, 64 means dead
     const url = `https://www.royalroad.com${path}`;
-    while (lastFetchTime && lastFetchTime - Date.now() < 2000) {}
+    while (lastFetchTime && Date.now() - lastFetchTime < 1000) {}
     lastFetchTime = Date.now();
-    console.log("Sending GET request for ", path);
     const html = await axios.get(url);
     const parsed = readHTML(html);
     destination.chapData = parsed.tagData;
@@ -110,7 +109,7 @@ async function scrapeFiction(path, destination) {//tagData 63 means completed, 6
     } else if(data[64]) {
         destination.dead = true;
     }
-    console.log("Loop finished for ", path);
+    // console.log("Loop finished for ", path);
 }
 module.exports = {
     scrapeFiction
