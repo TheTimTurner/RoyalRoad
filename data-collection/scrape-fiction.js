@@ -62,10 +62,15 @@ const tagToInt = {
     'ongoing': 57,
     'portal fantasy / isekai': 58,
     'original': 59,
-    'hiatus': 60
+    'hiatus': 60,
+    'short story': 61,
+    'fan fiction': 62,
+    'completed': 63,
+    'dropped': 64
 }
 
 function readHTML(html) {
+    console.log("Starting readHTML");
     const tagCount = Object.keys(tagToInt).length;
     let tagData = (new Array(tagCount+6)).fill(0);
     let errors;
@@ -85,24 +90,28 @@ function readHTML(html) {
         const val = parseInt(text);
         tagData[tagCount+i] = val;
 
-        console.log(text);
     });
     // console.log("Ret val: ", {tagData, errors})
     return {tagData, errors};
 }
-
-async function scrapeFiction(path, destination) {
+let lastFetchTime;
+async function scrapeFiction(path, destination) {//tagData 63 means completed, 64 means dead
     const url = `https://www.royalroad.com${path}`;
-    await axios.get(url)
-        .then(readHTML)
-        .then(parsed => {
-            destination.chapData = parsed.tagData;
-            destination.errors = parsed.errors;
-            console.log('Destination: ', destination)
-        })
-        .catch(err => console.log(`Error: ${err}`));
+    while (lastFetchTime && lastFetchTime - Date.now() < 2000) {}
+    lastFetchTime = Date.now();
+    console.log("Sending GET request for ", path);
+    const html = await axios.get(url);
+    const parsed = readHTML(html);
+    destination.chapData = parsed.tagData;
+    destination.errors = parsed.errors;
+    const data = parsed.tagData;
+    if (data[63]) {
+        destination.dead = false;
+    } else if(data[64]) {
+        destination.dead = true;
+    }
+    console.log("Loop finished for ", path);
 }
-scrapeFiction('/fiction/10073/the-wandering-inn', {});
 module.exports = {
     scrapeFiction
 };
