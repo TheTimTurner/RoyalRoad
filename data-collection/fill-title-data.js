@@ -14,7 +14,7 @@ async function run() {
     console.log("Data parsed in");
     const last = books.length-1;
     console.log("About to loop");
-    for (let index = 13998; index < books.length; index++) {
+    for (let index = 17244; index < books.length; index++) {
 
           const fiction = books[index];
           const comma = index == last ? '}' : ',';
