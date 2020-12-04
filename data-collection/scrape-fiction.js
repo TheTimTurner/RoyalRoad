@@ -75,6 +75,7 @@ function readHTML(html) {
     let tagData = (new Array(tagCount+6)).fill(0);
     let errors;
     const $ = cheerio.load(html.data);
+
     $('.label, .list-inline li').each((i, label) => {
         const text = $(label).text().toLowerCase();
         const correspondingInt = tagToInt[text];
@@ -89,6 +90,7 @@ function readHTML(html) {
         const text = $(statistic).text().replace(/,/g,'');
         const val = parseInt(text);
         tagData[tagCount+i] = val;
+        //console.log();
 
     });
     // console.log("Ret val: ", {tagData, errors})
@@ -98,10 +100,12 @@ let lastFetchTime;
 async function scrapeFiction(fiction, index, comma) {//tagData 63 means completed, 64 means dead
     const path = fiction.homepage;
     const url = `https://www.royalroad.com${path}`;
+    console.log(url);
     while (lastFetchTime && Date.now() - lastFetchTime < 1000) {}
     lastFetchTime = Date.now();
     const html = await axios.get(url);
     const parsed = readHTML(html);
+
     fiction.chapData = parsed.tagData;
     fiction.errors = parsed.errors;
     const data = parsed.tagData;
@@ -113,6 +117,7 @@ async function scrapeFiction(fiction, index, comma) {//tagData 63 means complete
     const stringified = JSON.stringify(fiction, null, 4);
     fs.appendFileSync('dataOutput.json', `"${index}" : ${stringified}${comma}`, (err) => err ? console.log(`Could not write ${index} output to file`) : console.log(`Output ${index} written to file.`));
     console.log("Data written for ", index);
+    //console.log(`Data ${parsed.tagData}`);
 }
 module.exports = {
     scrapeFiction
