@@ -1,7 +1,7 @@
 # RoyalRoad
 A project to use machine learning to determine whether a fiction posted to RoyalRoad.com (a web-fiction nexus) is likely to be dropped by the author, or if it will continue for a while longer.
 
-##Data Collection
+## Data Collection
 Uses Node.js and the Axios and Cheerio packages to scrape titles and genre information from a number of books on RoyalRoad.com
 
 the prgram web scrapes information from the Royal Road Website. Running node fill-title-data.js from the data-collection folder will begin the data collection process. All of the data is written to dataOutput.json. We have moved the correct file into the main folder manually.
